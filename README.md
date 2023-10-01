@@ -1,17 +1,19 @@
 #### Go To- src > Pages > Home > Home.js
 
-// Get
+// Get requests 
+```ruby
 useEffect(() => {
         fetch('http://localhost:5000/users')
             .then(res => res.json())
             .then(data => setUsers(data))
 }, [])
-
+```
 
 // POST example
 // step_1. create a post Api in Server site
 // step_2. uploading json data with method,headers,body; like this-
 /* ----------See the exam. in mozilla doc-------------- */
+```ruby
 fetch('http://localhost:5000/users', {
 method: 'POST',
  headers: {
@@ -28,14 +30,16 @@ body: JSON.stringify(user),
   .catch(error => {
     console.error('Error:', error);
   });
-  
   //server site
   // step_4 receive req with(req.body);
   // step_5 stop undefine data use middle ware (app.use(express.json());)    
   event.target.reset()
     }
+```
 
 // DELETE
+
+```ruby
   const handleDelete = user => {
   const agree = window.confirm(`you want to delete${user.name}`)
   if (agree) {
@@ -58,3 +62,4 @@ body: JSON.stringify(user),
   });             
   }
   }
+```
